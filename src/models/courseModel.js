@@ -28,6 +28,6 @@ const courseSchema = new mongoose.Schema(
 );
 
 const Course =
-  mongoose.model.courses || mongoose.model("courses", courseSchema);
+  mongoose.models.courses || mongoose.model("courses", courseSchema);
 
 export default Course;

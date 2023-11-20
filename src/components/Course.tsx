@@ -16,10 +16,10 @@ const Course = (props: any) => {
         </div>
         <div className="course-content">
           <div className="title">
-            <h4>{props.coursetitle}</h4>
+            <h4>{props.course.title}</h4>
           </div>
           <div className="description">
-            <p>{props.course.substr(0, 35)} ...</p>
+            <p>{props.course.description.substr(0, 35)} ...</p>
           </div>
           <div className="price">
             <p>$ {props.course.price}</p>
@@ -29,7 +29,9 @@ const Course = (props: any) => {
               className="btn"
               variant="contained"
               fullWidth={true}
-              // onClick={() => onViewDetails(course)}
+              onClick={() => {
+                props.onViewDetails(props.course._id);
+              }}
             >
               View Details
             </Button>

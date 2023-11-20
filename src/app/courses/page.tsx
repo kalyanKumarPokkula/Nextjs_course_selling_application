@@ -4,24 +4,28 @@ import React, { useState, useEffect } from "react";
 import Course from "@/components/Course";
 import axios from "axios";
 import "./page.css";
+import { useRouter } from "next/navigation";
 
 const CourseList = () => {
   const [Courses, setCourses] = useState<any>([]);
   const [isEmpty, setIsEmpty] = useState(false);
   const [courseDeleted, setcoursesDeleted] = useState(false);
 
+  const router = useRouter();
+
   useEffect(() => {
     const getCourses = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:3000/admin/courses",
-          {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: "Bearer " + localStorage.getItem("token"),
-            },
-          }
+          "api/courses"
+          // {
+          //   headers: {
+          //     "Content-Type": "application/json",
+          //     Authorization: "Bearer " + localStorage.getItem("token"),
+          //   },
+          // }
         );
+        console.log(response);
 
         setCourses([...response.data.courses]);
         console.log(response.data.courses.length);
@@ -64,7 +68,7 @@ const CourseList = () => {
   // };
 
   const viewDetailsHandler = (value: any) => {
-    console.log(value);
+    router.push(`/courses/${value}`);
   };
 
   return (
@@ -84,8 +88,8 @@ const CourseList = () => {
               <Course
                 course={item}
                 // onDeleteCourse={deleteCourseHandler}
-                // onViewDetails={viewDetailsHandler}
-                key={item.courseId}
+                onViewDetails={viewDetailsHandler}
+                key={item._id}
               />
             );
           })}

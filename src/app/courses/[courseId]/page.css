@@ -12,31 +12,27 @@
 }
 
 .course-content {
-  padding: 14px;
+  padding: 10px 14px;
   display: flex;
   flex-direction: column;
 }
 
-.course-content .description {
-  color: #6a6f73;
-  padding-bottom: 12px;
-}
-
 .course-content .title {
-  padding-bottom: 12px;
+  font-family: "Belanosima", sans-serif;
+  font-weight: 600;
 }
 
-.price {
-  font-size: large;
-  font-weight: bold;
-}
-
-.course-content .btn {
-  margin-top: 16px;
-  background-color: rgb(156, 39, 176);
+.course-content .price {
   font-family: "Belanosima", sans-serif;
 }
 
-.course-content .btn:hover {
-  background-color: rgba(156, 39, 176, 0.9);
+.display-content .title {
+  font-family: "Belanosima", sans-serif;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.display-content .description {
+  font-family: "Belanosima", sans-serif;
+  margin-bottom: 20px;
 }

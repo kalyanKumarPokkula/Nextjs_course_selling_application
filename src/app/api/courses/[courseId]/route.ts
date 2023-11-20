@@ -1,4 +1,4 @@
-import { NextResponse, NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import connect from "@/dbConfig/dbConfig";
 import Course from "@/models/courseModel";
 
@@ -6,9 +6,11 @@ connect();
 
 export async function GET(req: NextRequest) {
   try {
-    let response = await Course.find({});
+    let { url } = req;
+    let courseId = url.split("/").pop();
+    let course = await Course.findById(courseId);
     return NextResponse.json({
-      courses: response,
+      course: course,
       success: true,
     });
   } catch (error) {
