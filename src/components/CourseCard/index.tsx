@@ -1,6 +1,7 @@
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
-import "./Course.css";
+import "./index.css";
+import Link from "next/link";
 
 const Course = (props: any) => {
   var cardStyle = {
@@ -25,16 +26,18 @@ const Course = (props: any) => {
             <p>$ {props.course.price}</p>
           </div>
           <div>
-            <Button
-              className="btn"
-              variant="contained"
-              fullWidth={true}
-              onClick={() => {
-                props.onViewDetails(props.course._id);
-              }}
-            >
-              View Details
-            </Button>
+            <Link href={`courses/${props.course._id}`}>
+              <Button
+                className="btn"
+                variant="contained"
+                fullWidth={true}
+                // onClick={() => {
+                //   router.push(`courses/${props.course._id}`);
+                // }}
+              >
+                View Details
+              </Button>
+            </Link>
             {/* <Button
               className="btn"
               variant="contained"

@@ -1,39 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Belanosima&display=swap");
 
-.signup-page {
+.login-page {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.signup-form {
+.login-form {
   margin-top: 16px;
   width: 30rem;
+  /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
   margin-top: 60px;
   padding: 30px 46px;
 }
 
-.signup-form .signup-title {
+.login-form .login-title {
   font-family: "Belanosima", sans-serif;
-}
-
-.input .last-name {
-  margin-left: 6px;
 }
 
 .input {
   margin: 10px 0px;
 }
-
-.bottom {
+.login-form .bottom {
+  display: flex;
+  justify-content: space-between;
   margin-top: 12px;
 }
+
 .btn-container {
   margin-top: 14px;
-  /* margin-bottom: 6px; */
+  margin-bottom: 4px;
 }
 
 .btn-container .btn {
@@ -44,12 +43,13 @@
 .btn-container .btn:hover {
   background-color: rgba(156, 39, 176, 0.9);
 }
-.bottom {
+.bottom-login {
+  margin-bottom: 16px;
+  margin-top: 18px;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
 }
-
-.bottom p {
+.bottom-login p {
   display: inline;
 }
